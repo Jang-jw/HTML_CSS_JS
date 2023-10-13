@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>선택자</title>
+    <style>
+        *{
+            color: blue;
+        }
+        p{
+            color: red;
+        }
+        .food{
+            color: yellow;
+        }
+        #buger{
+            color: green;
+        }
+
+        /* 그룹선택자 */
+        /* ',' 로 구분해서 여러 개를 선택할 수 있다 */
+        .food, #buger, ol{
+            background-color: antiquewhite;
+        }
+    </style>
+</head>
+<body>
+    <h1>CSS 활용하기</h1>
+    <p>오늘의 점심메뉴</p>
+    <ul>
+        <!-- id 는 고유의 값! 중복이 불가능-->
+        <!-- Class 는 중복 가능! -->
+        <li class="food" id="buger">햄버거🍔</li>
+        <li class="food">도시락🍱</li>
+        <li class="food">육회비빔밥🥩</li>
+    </ul>
+    <ol>
+        <li>스트레칭 잘하기</li>
+        <li>쉬는시간 잘지키기</li>
+        <li>지각하지 않기</li>
+    </ol>
+</body>
+</html>

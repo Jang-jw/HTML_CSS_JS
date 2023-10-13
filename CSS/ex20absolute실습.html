@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>absolute</title>
+    <style>
+        #parent{
+            position: relative;
+        }
+        #child1,#child2,#child3,#child4{
+            width: 100px;
+            height: 100px;
+            position: absolute;
+        }
+        #child1{
+            background-color: antiquewhite;
+        }
+        #child2{
+            background-color: aqua;
+            left: 100px;
+            top: 100px;
+        }
+        #child3{
+            background-color: coral;
+            left: 200px;
+            top: 200px;
+        }
+        #child4{
+            background-color: deeppink;
+            left: 300px;
+            top: 300px;
+        }
+    </style>
+</head>
+<body>
+    <div id="parent">
+        <div id="child1"></div>
+        <div id="child2"></div>
+        <div id="child3"></div>
+        <div id="child4"></div>
+    </div>
+</body>
+</html>

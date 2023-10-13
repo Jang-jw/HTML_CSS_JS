@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>선택자2</title>
+    <style>
+        /* 계층선택자 */
+
+        /* (1) 자손선택자 
+                기호 : (띄어쓰기) */
+        /* (1-1) div 를 기준으로 자손인 span 의 색을 tomato */
+        div span{
+            color:tomato ;
+        }
+        /* (1-2) div 를 기준으로 자손인 li 의 색을 blue */
+        div li{
+            color : blue ;
+        }
+
+        /* (2) 자식선택자 
+                기호 : > */
+        /* (2-1) ol 을 기준으로 자식인 span 의 색을 hotpink */
+        ol>span{
+            color : hotpink ;
+        }
+
+        /* (3) 근접후행선택자 
+                기호 : + */
+        /* (3-1) li 를 기준으로 근접해서 뒤로 따라오는 li 의 색을 green */
+        li+li{
+            color : green ;
+        }
+
+        /* (4) 후행선택자 
+                기호 : ~ */
+        /* (4-1) li 를 기준으로 형제관계인 li 의 색을 lime */
+        li~li{
+            color : lime ;
+        }
+
+        /* rule 이라는 클래스 중, strong 태그에 해당하는 것만 바꿀래! */
+        strong.rule{
+            /* 가중치 : 10+1=11 */
+            color: yellow;
+        }
+        strong{
+            /* 가중치 : 1 */
+            color: red !important; 
+            /* !important : 최우선 적용 */
+        }
+    </style>
+</head>
+<body>
+    <div>
+        <strong class="rule">나만의 간장계란밥 레시피!</strong>
+        <ol>
+            <li>계란을 안 뒤집고 굽는다</li>
+            <li>밥에 간장이랑 참기름을 넣는다</li>
+            <span>(짜게 만들어지지 않도록 주의할 것)</span>
+            <li>계란을 넣고 깨를 왕창뿌린다</li>
+        </ol>
+    </div>
+</body>
+</html>

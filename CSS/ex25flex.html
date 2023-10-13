@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>flex</title>
+    <!-- 외부 css 파일을 가져오는 방법 -->
+    <link rel="stylesheet" href="myCss.css">
+    <!-- 
+        스타일 선언 방식 종류
+
+        인라인 >> 내부 >> 외부 >> 임포트 
+
+        1) 내부 스타일 선언 방식
+        : HTML 문서 안에서 style 태그 열어서 사용
+        2) 외부 스타일 선언 방식
+        : css 파일을 따로 만들어서 link 태그를 활용해서 로드하는 방식 
+        3) 인라인 스타일 선언 방식
+        : 태그 안쪽에 attribute 를 활용해서 스타일 선언하는 방법 
+        ex) <p style="width:20px;"></p>
+        4) 임포트 방식
+        : css 문서에서 다른 css 파일을 로드하고 싶을 때 사용 
+
+        동일한 태그에 인라인, 내부, 외부를 줬을 때 적용되는 것은?
+        : 제일 가까운 인라인, 내부, 외부 순서
+     -->
+</head>
+<body>
+    <div id="container">
+        <div class="item">1</div>
+        <div class="item">2</div>
+        <div class="item">3</div>
+    </div>
+</body>
+</html>

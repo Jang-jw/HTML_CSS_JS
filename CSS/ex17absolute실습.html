@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>absolute실습</title>
+    <style>
+        #div1,#div2,#div3{
+            width: 100px;
+            height: 100px;
+        }
+        #div1{
+            background-color: tomato;
+            position: absolute;
+            z-index: 100;
+            /* 
+            z-index : 요소의 쌓이는 순서를 지정하는 방법
+            ( 특정 값을 가지고 있지는 않다 )
+            : 더 큰수를 가진 요소를 위로 올려준다.
+            : static 일 때는 사용할 수 없다. 
+            */
+        }
+        #div2{
+            background-color: gold;
+            position: absolute;
+            top: 50px;
+            z-index: 99;
+        }
+        #div3{
+            background-color: cornflowerblue;
+            position: absolute;
+            top: 100px;
+        }
+        #parent{
+            position: relative;
+        }
+    </style>
+</head>
+<body>
+    <div id="parent">
+        <div id="div1"></div>
+        <div id="div2"></div>
+        <div id="div3"></div>
+    </div>
+</body>
+</html>

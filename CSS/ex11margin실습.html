@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>margin실습</title>
+    <style>
+        div{
+            width: 100px;
+            height: 100px;
+        }
+        #box1{
+            background-color: red;
+            margin-left: 200px;
+        }
+        #box2{
+            background-color: blue;
+            margin-left: 300px;
+        }
+        #box3{
+            background-color: green;
+            margin-left: 400px;
+        }
+        #box4{
+            background-color: gray;
+            margin-left: 500px;
+        }
+
+        /* margin 상쇄현상 */
+        /* 같은 영역에 마진이 겹쳐서 적용되면
+            그 중에 더 큰 마진으로 적용된다 (누적되지 않음!!)
+            ex) margin 15 와 20 이 중첩 : 20 */
+        #box5{
+            background-color: gold;
+            margin-bottom: 120px;
+        }
+        #box6{
+            background-color: seagreen;
+            margin-top: 100px;
+        }
+    </style>
+</head>
+<body>
+    <div id="box1"></div>
+    <div id="box2"></div>
+    <div id="box3"></div>
+    <div id="box4"></div>
+    <div id="box5"></div>
+    <div id="box6"></div>
+</body>
+</html>
