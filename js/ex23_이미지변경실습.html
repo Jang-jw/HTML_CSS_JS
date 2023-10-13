@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ex23_이미지변경실습</title>
+    <style>
+        img{
+            width: 600px;
+            height: 400px;
+        }
+    </style>
+</head>
+<body>
+    <img src="https://t1.daumcdn.net/thumb/R720x0/?fname=http://t1.daumcdn.net/brunch/service/user/jz1/image/2M7yDXbH8UOIpNQw_3n7t866mmM.jpg" id="img"><br>
+    <button id="btn">이미지변경</button>
+
+    <script>
+        // 1. 사용자 이미지변경 버튼을 클릭했을때
+        let img1 = "https://src.hidoc.co.kr/image/lib/2022/7/20/1658306424525_0.jpg";
+        let img2 = "https://t1.daumcdn.net/thumb/R720x0/?fname=http://t1.daumcdn.net/brunch/service/user/jz1/image/2M7yDXbH8UOIpNQw_3n7t866mmM.jpg";
+        const img = document.getElementById("img");
+        const btn = document.getElementById("btn");
+        // let 와 const 로 가져오는 차이점은 재선언 여부에 따라서 다르다.
+        // 재선언이 필요하면 let 으로 가져온다. 
+
+        // 2. 기존 이미지에서 다른 이미지로 교체되는 기능 만들기
+        // 3. 그런데 사용자가 한번 더 클릭하면 기존 이미지로 다시 돌아오기 (왔다갔다 가능)
+        // 사용해야 하는것 : DOM, 이벤트핸들러(addEventListener), 조건문(src값)
+        const imgChange = function(){
+            if(img.src==img1){
+                img.setAttribute("src",img2);
+            }else{
+                img.setAttribute("src",img1);
+            }
+        }
+        btn.addEventListener("click",imgChange);
+    </script>
+</body>
+</html>

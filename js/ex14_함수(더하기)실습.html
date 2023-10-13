@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ex13_함수(더하기)실습</title>
+</head>
+<body>
+    
+    <script>
+        // 두 정수를 입력받은 후 합을 반환하는 addNumber()
+
+        // 1. 두 정수를 입력받기
+        let num1 = parseInt(prompt("첫 번째 정수 입력 : "));
+        let num2 = parseInt(prompt("두 번째 정수 입력 : "));
+        // 2. 전달받은 두 정수를 더한 결과 반환
+        // 3. 반환된 결과를 다시 변수에 담은 후 출력
+
+        // 함수표현식 
+        // 세 가지 방법으로 구현 
+        
+        // 첫 번째 방법
+        function addNumber1(n1,n2){
+            return n1+n2;
+        }
+        let result1 = addNumber1(num1,num2);
+        
+        // 두 번째 방법
+        const addNumber2 = function(n1,n2){
+            return n1+n2;
+        }
+        let result2 = addNumber2(num1,num2);
+        
+        // 세 번째 방법
+        const addNumber3 = (n1,n2) => {
+            return n1+n2;
+        }
+        let result3 = addNumber3(num1,num2);
+
+        // 네 번째 방법
+        const addNumber4 = (n1,n2) => n1+n2;
+        let result4 = addNumber4(num1,num2);
+
+        // 출력
+        console.log("두 수의 합 (방법1) : ",result1);
+        console.log("두 수의 합 (방법2) : ",result2);
+        console.log("두 수의 합 (방법3) : ",result3);
+        console.log("두 수의 합 (방법4) : ",result4);
+    </script>
+</body>
+</html>

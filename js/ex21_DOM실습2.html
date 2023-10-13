@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ex21_DOM실습2</title>
+</head>
+<body>
+    <p id="cntId">0</p>
+
+    <!-- 
+    onclick : 자바스크립트 클릭 이벤트 
+        - 여기서는 함수 호출할 때 () 를 붙여줘야 한다. 
+    -->
+    <button id="increase" onclick="plusNumber()">증가</button> <!-- onclick 적용시 -->
+    <button id="decrease">감소</button>
+
+    <script>
+        const cntId = document.getElementById("cntId");
+        const increase = document.getElementById("increase");
+        const decrease = document.getElementById("decrease");
+
+        let cnt = cntId.textContent;
+        // 증가 버튼 눌렀을 때 p태그의 0에 +1
+        const plusNumber = function(){
+            cnt++;
+            cntId.textContent = cnt;
+        }
+        // 감소 버튼 눌렀을 때 1씩 감소
+        const minusNumber = function(){
+            // 감소할 때 0 밑으로는 내려가지 않게 해주기 
+            if(cnt>0){
+                cnt--;
+            }
+            cntId.textContent = cnt;
+        }
+
+        // 이벤트 핸들러에 함수를 인자로 넘길 때는 호출을 의미하는 () 를 붙이지 않는다. 
+        // () 를 붙여버리면 자바스크립트 엔진이 "어? 함수다! 실행~" 해버림 
+        // increase.addEventListener("click",plusNumber);
+        decrease.addEventListener("click",minusNumber);
+    </script>
+</body>
+</html>

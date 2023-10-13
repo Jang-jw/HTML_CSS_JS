@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        h1{
+            border: 0px dotted red;
+        }
+
+        img{
+            width: 400px;
+        }
+    </style>
+</head>
+<body>
+    <button>애니메이션 효과!</button>
+    <h1>이것 좀 해볼래?</h1>
+    <img src="https://t1.daumcdn.net/cfile/tistory/991858505E194D6703" alt="">
+
+    <script src="../code.jquery.com_jquery-3.7.0.min.js"></script>
+    <script src="https://code.jquery.com/ui/1.13.2/jquery-ui.min.js" integrity="sha256-lSjKY0/srUM9BE3dPm+c4fBo1dky2v27Gdjm2uoZaL0=" crossorigin="anonymous"></script>
+
+
+    <script>
+        // 애니메이션 효과 활용해보기
+        // 1) h1태그에 마우스를 올렸을 때 애니메이션 이벤트 처리
+        $('h1').on('mouseover', function(){
+            // animate({바꾸고 싶은 css 속성값}, 지속시간, 이징종류)
+            // 이징종류는 안적어도 무방, default : swing
+
+            $(this).animate({
+                'color' : 'blue',
+                'font-size' : '30px',
+                'border-width' : '4px'
+            }, 3000)
+        })
+
+        // 2) 버튼을 클릭했을 때 이미지 크게 보여주기
+        $('button').on('click', function(){
+            $('img').animate({
+                'width' : '85%'
+            }, 500)
+        })
+    </script>
+</body>
+</html>

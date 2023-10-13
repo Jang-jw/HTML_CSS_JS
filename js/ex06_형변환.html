@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ex06_형변환</title>
+</head>
+<body>
+    <script>
+        let str = "안녕하세요";
+        let num = 123;
+        console.log(str);
+        console.log(num);
+
+        // let num2 = prompt("숫자를 입력해 주세요."); // prompt 는 문자열 형태로 반환함 
+        // console.log(num2);
+        // prompt 로 받아온 값은 string 자료형이다. 
+
+        // 문자열 => 숫자로 변환
+        let num3 = "5.9";
+        console.log(parseInt(num3),typeof(parseInt(num3)));
+        console.log(Number(num3),typeof(Number(num3)));
+        // NaN : not a number
+        // 이런 경우에는 데이터를 다시 체크해야 한다. 
+    </script>
+</body>
+</html>

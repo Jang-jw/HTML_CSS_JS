@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ex36_영화진흥위원회</title>
+</head>
+
+<body>
+    <button id="btn-req">데이터 요청</button>
+    <div id="movie-area"></div>
+
+    <script src="../code.jquery.com_jquery-3.7.0.min.js"></script>
+    <script>
+        let movieUrl = "http://kobis.or.kr/kobisopenapi/webservice/rest/boxoffice/searchDailyBoxOfficeList.json?key=f5eef3421c602c6cb7ea224104795888&targetDt=20230730";
+        const render = function (movieList) {
+            let resultHTML = `
+<table border="1px" width="500px">
+    <tr>
+        <td>순위</td>
+        <td>전일대비</td>
+        <td>영화명</td>
+        <td>개봉일</td>
+        <td>상영횟수</td>
+        <td>당일매출액</td>
+        <td>전일대비매출액증감비율</td>
+        <td>누적매출액</td>
+        <td>누적관객수</td>
+    </tr>
+`;
+
+            for (let i = 0; i < movieList.length; i++) {
+                resultHTML += `
+    <tr>
+        <td>${movieList[i].rank}</td>
+        <td>${movieList[i].rankInten}</td>
+        <td>${movieList[i].movieNm}</td>
+        <td>${movieList[i].openDt}</td>
+        <td>${movieList[i].showCnt}</td>
+        <td>${movieList[i].salesAmt}</td>
+        <td>${movieList[i].salesChange}</td>
+        <td>${movieList[i].salesAcc}</td>
+        <td>${movieList[i].audiAcc}</td>
+    </tr>
+    `;
+            };
+            resultHTML += `</table>`;
+
+            $('#movie-area').html(resultHTML);
+        }
+        $("#btn-req").on("click", function () {
+            // 영화정보를 비동기통신으로 요청하는 로직 구현 
+            // 영화진흥위원회 open api 사용
+            // api : aplication programming interface 
+            // open api : 누구나 데이터를 사용할 수 있도록 공개된 api
+            // => 공개되어있는게 데이터가 될 수도 있고 기능이 될 수도 있다. 
+
+            $.ajax({
+                url: movieUrl,
+                success: function (result) {
+                    // console.log("요청 성공");
+                    // console.log(result.boxOfficeResult.dailyBoxOfficeList);
+                    let movieList = result.boxOfficeResult.dailyBoxOfficeList;
+
+                    // 영화순위(rank), 영화명(movieNm), 개봉일(openDt)을 웹페이지에 출력
+                    render(movieList);
+                },
+                error: function () {
+                    console.log("오류 발생");
+                }
+            })
+        });
+    </script>
+</body>
+
+</html>

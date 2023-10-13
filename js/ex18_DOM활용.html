@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ex18_DOM활용</title>
+</head>
+<body>
+    <p id="msg">오늘은 문서객체모델을 배워보자~!</p>
+
+    <script>
+        // HTML 태그를 포함해서 작성할 때 : innerHTML
+        // 내부 텍스트 내용만 작성할 때 : textContent
+        let msg = document.getElementById("msg");
+        console.log("p태그 : ",msg);
+
+        // p태그의 전체내용 접근
+        console.log(msg.innerHTML);
+        console.log(msg);
+
+        // p태그의 내용을 변경
+        msg.innerHTML = "<h1>내용변경완료</h1>"; // <h1> 속성이 적용되어 반환된다. 
+        msg.innerHTML += "<h3>추가되나요~?</h3>"
+        // msg.textContent = "<h1>내용변경완료</h1>"; // == innertext, <h1> 태그가 문자열로 반환된다. 
+        console.log(msg);
+
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ex23_제이쿼리실습2</title>
+</head>
+
+<body>
+    <input type="text" id="input1">
+    <button id="btn">입력!</button>
+    <br>
+    <div id="resultA">
+        <h3>h3</h3>
+
+        <script src="../code.jquery.com_jquery-3.7.0.min.js"></script>
+        <script>
+            // 1. 제이쿼리 로드하기
+            // 2. 사용자가 input 태그에 입력한 값을 출력! (버튼을 클릭했을 때!)
+            let result = "";
+            $("#btn").on("click", function () {
+                // *.prop() => property
+                // 선택한 요소의 속성을 가져오는 메소드
+                // 사용법은 attr() 과 동일하다.
+                console.log($("#input1").prop("value"));
+                let value = $("#input1").prop("value");
+
+                // 4. resultA 라는 div 공간에 h3 태그로 하나씩 추가시키기 
+                result += "<h3>";
+                result += value;
+                result += "<h3>";
+
+                $("#resultA").html(result);
+
+                // 3. 버튼이 클릭되면 input 태그 안의 값도 비우기!
+                $("#input1").prop("value","");
+            });
+
+        </script>
+    </div>
+</body>
+
+</html>

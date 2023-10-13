@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ex22_DOM요소변경</title>
+</head>
+<body>
+    <h1 id="h1">강아지</h1>
+    <img id="img" src="https://t0.gstatic.com/licensed-image?q=tbn:ANd9GcQkrjYxSfSHeCEA7hkPy8e2JphDsfFHZVKqx-3t37E4XKr-AT7DML8IwtwY0TnZsUcQ" width="600" height="400">
+
+    <script>
+        let h1 = document.getElementById("h1");
+        let img = document.getElementById("img");
+        
+        // 요소 변경 메소드
+        // 1. 요소.innerHTML
+        // 요소 내부 내용 접근
+        h1.innerHTML = "강아지야~~";
+
+        // 2. 요소.속성명
+        // 요소의 속성에 접근
+        img.src = "https://www.dailysecu.com/news/photo/202104/123449_145665_1147.png";
+
+        // 3. 요소.setAttribute("속성명","바꿀값")
+        // 요소의 속성을 변경하는 기능 
+        img.setAttribute("src","https://t0.gstatic.com/licensed-image?q=tbn:ANd9GcQkrjYxSfSHeCEA7hkPy8e2JphDsfFHZVKqx-3t37E4XKr-AT7DML8IwtwY0TnZsUcQ");
+
+        // 4. 요소.style.스타일속성명
+        // 요소의 스타일을 접근
+        h1.style.color = "red";
+    </script>
+</body>
+</html>

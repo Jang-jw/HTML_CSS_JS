@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ex35_요소추가실습</title>
+    <style>
+        img{
+            width: 600px;
+            height: 400px;
+        }
+    </style>
+</head>
+
+<body>
+    <input type="text" id="txt">
+    <button id="btn">추가</button>
+    <div></div>
+
+    <script src="../code.jquery.com_jquery-3.7.0.min.js"></script>
+    <script>
+        // 사용자 입력값이 '강아지'면 강아지 사진을 input 태그 아래에 추가
+        // '고양이'면 고양이 사진을 추가 
+        // 하지만 사진은 제일 최근에 추가한 사진이 위로 오게!
+
+        let img1 = "https://i.namu.wiki/i/slmFMXb1Fchs2zN0ZGOzqfuPDvhRS-H9eBp7Gp613-DNKi6i6Ct7eFkTUpauqv5HAYR97mrNqrvvcCDEyBdL_g.webp";
+        let img2 = "https://img.freepik.com/free-photo/adorable-kitty-looking-like-it-want-to-hunt_23-2149167099.jpg?w=2000";
+
+        $("#btn").on("click", function () {
+            if ($("#txt").prop("value") == "강아지") {
+                $("div").prepend(`<img src="${img1}">`);
+            } else if ($("#txt").prop("value") == "고양이") {
+                $("div").prepend(`<img src="${img2}">`);
+            }
+        });
+    </script>
+</body>
+
+</html>

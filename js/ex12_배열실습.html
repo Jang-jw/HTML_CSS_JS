@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ex12_배열실습</title>
+</head>
+<body>
+    
+    <script>
+        // 배열 실습
+
+        // 1. 자신이 좋아하는 5가지를 담은 배열 만들기
+        let arr = ['인덱스','배열','좋아','요소','코딩'];
+        // 2. 배열 출력 (제가 좋아하는 것은 o,o,o,o,o입니다)
+        console.log(arr);
+        for(let i=0; i<arr.length; i++){
+            console.log(arr[i]);
+        }
+        // 3. 배열의 마지막 요소를 제거하기
+        arr.pop();
+        // 4. 다시 2처럼 출력
+        console.log(arr);
+        // 5. 배열의 마지막 요소에 코딩을 넣기
+        arr.push("코딩");
+        // 6. 다시 2처럼 출력
+        console.log(arr);
+        // 7. 배열 속에 "코딩" 데이터가 있는지 출력 (인덱스 번호까지)
+        // => "코딩"있니? true
+        console.log('"코딩"있니?',arr.includes("코딩"));
+        // => "코딩"은 00번째 인덱스에 있어요
+        console.log('"코딩"은 '+arr.indexOf("코딩")+'번째 인덱스에 있어요');
+        // 8. 배열 속에 3,4번 인덱스 데이터를 새로운 배열로 빼오기
+        let arrNew = arr.splice(3,4);
+        // 9. 새로운 배열은 00, 00 입니다 (출력)
+        console.log("새로운 배열은 : ",arrNew);
+        // 10. 기존 배열속 0~2번 데이터 제거하기
+        // 11. 그 빈자리는 "프로젝트하기"로 데체
+        arr.splice(0,1,"프로젝트하기",);
+        console.log(arr);
+        // 12. 최종 배열의 길이 출력하기 (배열이름.length())
+        console.log("내가 좋아하는 것의 갯수는 : "+arr.length);
+    </script>
+</body>
+</html>

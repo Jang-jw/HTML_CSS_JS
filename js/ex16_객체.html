@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ex16_객체</title>
+</head>
+<body>
+    
+    <script>
+        // 객체
+        // 구조 : {key:value, key:value, ... }
+        // key : 객체의 property(속성) - 문자열로 표현 
+        // value : property 의 값
+        // value 에는 기본 자료형, 객체타입 데이터, 함수
+
+        // 사용자 정의 객체 
+        let miri = {
+            "name" : "jumiri",
+            "age" : 20,
+            "info" : function(){
+                console.log(this.name);
+                console.log(miri.name);
+            },
+            "add" : "KwangJu"
+        }
+        console.log(miri);
+
+        // miri 라고 하는 객체에서 이름을 출력 
+        console.log(miri.name);
+
+        // miri 객체의 info 함수 실행
+        miri.info();
+
+        // miri 객체의 age 변경하기
+        miri.age = 30;
+        console.log(miri);
+
+        // 객체
+        // : 내장객체, 브라우저객체, 사용자정의객체
+
+        // 내장객체 : 브라우저 속 자바스크립트 엔진에 내장된 객체.
+        // ex) 날짜 객체, 수학 객체, 배열 객체, 문자열 객체 ... 
+        // 날짜 객체 : getDate() => 현재 요일을 가져와주는 객체
+        // 수학 객체 : Math.random() => 랜덤 숫자를 반환해주는 객체 
+        // 배열 객체 : push(), pop()
+        // 문자열 객체 : lengh
+
+        // 사용자 정의 객체 : 사용자가 생성하는 객체. 
+
+        // 브라우저 객체
+        // : 브라우저에 내장된 객체 (계층적 구조)
+        // ex) alert(), prompt(), confirm() ... 
+
+        // 브라우저 객체 안에도 여러 객체들이 있는데
+        // 우리가 제어해 볼 것은 document 객체 
+    </script>
+</body>
+</html>

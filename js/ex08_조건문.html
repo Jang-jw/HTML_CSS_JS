@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ex08_조건문</title>
+</head>
+<body>
+    
+    <script>
+        // 조건문 : if, else if, if~else, switch~case
+
+        let changed = confirm("성합이 주미리가 맞습니까?");
+
+        if(changed==true){ // (changed) 만 적어도 true 로 인식 
+            alert("환영합니다 주미리님!")
+        }else{
+            let name = prompt("정확한 이름을 입력해주세요");
+            alert(`환영합니다 ${name}님!`);
+        }
+    </script>
+</body>
+</html>

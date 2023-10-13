@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ex33_div크기변경연습</title>
+    <style>
+        #test{
+            background-color: green;
+            width: 50px;
+            height: 40px;
+        }
+    </style>
+</head>
+<body>
+    <div id="test">영역</div>
+    <button id="size_big">크게</button>
+    <button id="size_small">작게</button>
+
+    <script src="../code.jquery.com_jquery-3.7.0.min.js"></script>
+    <script>
+        $("#size_big").on("click",function(){
+            $("#test").animate({
+                "width" : "500px",
+                "height" : "400px"
+            }, 500)
+        })
+        $("#size_small").on("click",function(){
+            $("#test").animate({
+                "width" : "50px",
+                "height" : "40px"
+            }, 500)
+        })
+    </script>
+</body>
+</html>

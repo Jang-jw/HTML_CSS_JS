@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ex30_제이쿼리이벤트</title>
+</head>
+<body>
+    <h1>변경해보자~</h1>
+    
+    <script src="../code.jquery.com_jquery-3.7.0.min.js"></script>
+    <script>
+        // 제이쿼리로 이벤트 추가하는 방법
+        // .com("이벤트종류", 함수)
+
+        $("h1").on("click",function(){
+            $("h1").css("color","orange");
+        });
+
+        $("h1").on("mouseover",function(){
+            // 마우스 올렸을 때
+            // 1. h1 의 내용을 변경 >> 마우스를 올리셨네요!
+            $(this).text("마우스를 올리셨네요~!");
+            // 2. h1 의 색상을 빨강으로
+            if($(this).attr("color") != "red"){
+                $("h1").css("color","red")
+            }
+        });
+        
+        $("h1").on("mouseout",function(){
+            // 마우스 올렸을 때
+            // 1. h1 의 내용을 변경 >> 마우스를 올리셨네요!
+            $(this).text("마우스를 떼셨네요~!");
+            // 2. h1 의 색상을 파랑으로
+            if($(this).attr("color") != "blue"){
+                $("h1").css("color","blue")
+            };
+        });
+
+        // 키보드를 눌렀을 때 이벤트 처리하는 방법
+        $("body").on("keydown",function(e){
+            // console.log(e);
+            // 내가 keyCode 만 가져오고 싶다면?
+            console.log(e.keyCode);
+            // keyCode 값을 통해서 조건문을 걸어줄 수 있다. 
+            if(e.keyCode==32){
+                console.log("스페이스바 입력!");
+            }
+        });
+    </script>
+</body>
+</html>

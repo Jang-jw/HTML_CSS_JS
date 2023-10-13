@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ex04_변수출력실습</title>
+</head>
+<body>
+    <script>
+        // 문제
+        // 사용자가 정보를 입력해주면 콘솔에 출력하는 프로그램을 구현하세요. 
+        // 변수, prompt(), console.log() 활용! 
+
+        // 1. 강의장 번호를 num 이라고 하는 변수에 저장 
+        // 2. 사용자에게 입력받은 이름/좋아하는 과일을 변수에 저장 
+        // 3. 강의장번호, 이름, 좋아하는 과일을 콘솔창에 출력
+
+        // 결과
+        // [이름을 입력해주세요] name 변수
+        // [좋아하는 과일을 입력해주세요] fruits 변수
+        // => 콘솔 [저는 7강의장의 000입니다. 좋아하는 과일은 00입니다.]
+
+        let name = prompt("이름을 입력해주세요");
+        let fruits = prompt("좋아하는 과일을 입력해주세요");
+        console.log("저는 7강의장의 ",name,"입니다. 좋아하는 과일은 ",fruits,"입니다.");
+        console.log("저는 7강의장의 "+name+"입니다. 좋아하는 과일은 "+fruits+"입니다.");
+
+        // 더하기 연산자가 복잡할 때는 탬플릿 연산자를 사용
+        // 백틱(``) 사용, 변수를 넣을 때는 ${변수이름}
+        console.log(`저는 7강의장의 ${name}입니다. 좋아하는 과일은 ${fruits}입니다.`);
+    </script>
+</body>
+</html>
