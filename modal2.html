@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>modal2</title>
+
+    <style>
+        #container{
+            position: absolute;
+        }
+        #modal.modal-overlay {
+            width: 100%;
+            height: 100%;
+            position: absolute;
+            left: 0;
+            right: 0;
+            display: none;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+
+            background: rgba(255, 255, 255, 0.25);
+            box-shadow: 0 8px 32px rgba(31, 38, 135, 0.37);
+            backdrop-filter: blur(1.5px);
+            -webkit-backdrop-filter: blur(1.5px);
+            border-radius: 10px;
+            border: 1px solid rgba(255, 255, 255, 0.18);
+        }
+        #modal .modal-window {
+            background: rgba(195, 228, 255, 0.7);
+            box-shadow: 0 8px 32px rgba(31, 38, 135, 0.37);
+            backdrop-filter: blur(13.5px);
+            -webkit-backdrop-filter: blur(13.5px);
+            border-radius: 10px;
+            border: 1px solid rgba(255, 255, 255, 0.18);
+
+            width: 400px;
+            height: 500px;
+            position: absolute;
+            top: 100px;
+            padding: 10px;
+        }
+        #modal .title {
+            padding-left: 10px;
+            display: inline;
+            text-shadow: 1px 1px 2px gray;
+            color: rgb(36, 22, 22);
+        }
+        #modal .title h2 {
+            display: inline;
+        }
+        #modal .close-area {
+            display: inline;
+            float: right;
+            padding-right: 10px;
+            cursor: pointer;
+            text-shadow: 1px 1px 2px gray;
+            color: rgb(36, 22, 22);
+        }
+        #modal .content {
+            margin-top: 20px;
+            padding: 0px 20px;
+            text-shadow: 1px 1px 2px gray;
+            color: rgb(36, 22, 22);
+        }
+    </style>
+</head>
+
+<body>
+    <div id="container">
+        <h1>모달창 연습</h1>
+        <button id="btn-modal">모달 창 열기</button>
+    </div>
+    <div id="modal" class="modal-overlay">
+        <div class="modal-window">
+            <div class="title">
+                <h2>모달</h2>
+            </div>
+            <div class="close-area">X</div>
+            <div class="content">
+                <p>여기는 모달입니다~</p>
+                <p>여기는 모달입니다~</p>
+                <p>여기는 모달입니다~</p>
+                <p>여기는 모달입니다~</p>
+                <p>여기는 모달입니다~</p>
+                <p>여기는 모달입니다~</p>
+            </div>
+        </div>
+    </div>
+    <script>
+        const modal = document.getElementById("modal");
+        const btnModal = document.getElementById("btn-modal");
+        btnModal.addEventListener("click", e => {
+            modal.style.display = "flex"
+        })
+
+        const closeBtn = modal.querySelector(".close-area");
+        closeBtn.addEventListener("click", e => {
+            modal.style.display = "none"
+        })
+
+        modal.addEventListener("click", e => {
+            const evTarget = e.target;
+            if (evTarget.classList.contains("modal-overlay")) {
+                modal.style.display = "none"
+            }
+        })
+
+        window.addEventListener("keyup", e => {
+            if (modal.style.display === "flex" && e.key === "Escape") {
+                modal.style.display = "none"
+            }
+        })
+    </script>
+</body>
+
+</html>
