@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <title>폭죽</title>
+</head>
+
+<body>
+    <script src="https://unpkg.com/three@latest"></script>
+    <script
+        src="https://cdnjs.cloudflare.com/ajax/libs/threejs-orbit-controls/2.2.0/three-orbit-controls.min.js"></script>
+
+
+
+    <canvas id="canvas" width="600" height="400"></canvas>
+
+    <script>
+        // Three.js를 초기화합니다.
+        var scene = new THREE.Scene();
+        var camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 1000);
+        var renderer = new THREE.WebGLRenderer({ canvas: document.getElementById("canvas") });
+        renderer.setSize(window.innerWidth, window.innerHeight);
+        document.body.appendChild(renderer.domElement);
+
+        // 카메라를 초기화합니다.
+        camera.position.set(0, 0, 500);
+
+        // 조명을 초기화합니다.
+        var light = new THREE.DirectionalLight(0xffffff, 1);
+        light.position.set(0, 1, 0);
+        scene.add(light);
+
+        // 폭죽 클래스를 생성합니다.
+        class Firework {
+            constructor(position, velocity, color) {
+                this.position = position;
+                this.velocity = velocity;
+                this.color = color;
+
+                // 폭죽의 객체를 생성합니다.
+                this.object = new THREE.Mesh(
+                    new THREE.SphereGeometry(20, 10, 10),
+                    new THREE.MeshStandardMaterial({
+                        color: this.color,
+                        emissive: new THREE.Color(0xffffff, 0.0),
+                    })
+                );
+                scene.add(this.object);
+
+                // 폭죽을 발사합니다.
+                this.object.position.add(this.velocity);
+
+                // 폭죽의 점멸 효과를 추가합니다.
+                this.material.emissive.set(new THREE.Color(0xffffff, 1.0));
+                this.material.emissive.add(new THREE.Color(0xffffff, 0.0));
+                this.material.emissive.add(new THREE.Color(0xffffff, 1.0));
+                this.material.emissive.add(new THREE.Color(0xffffff, 0.0));
+                this.material.emissive.add(new THREE.Color(0xffffff, 1.0));
+
+                // 폭죽이 폭발할 때 점멸 효과를 제거합니다.
+                this.object.on("destroy", () => {
+                    this.material.emissive.set(new THREE.Color(0xffffff, 0.0));
+                });
+            }
+
+            update() {
+                // 폭죽이 화면 밖으로 나가지 않도록 합니다.
+                if (this.object.position.y < -100) {
+                    this.destroy();
+                }
+            }
+
+            destroy() {
+                // 폭죽을 제거합니다.
+                scene.remove(this.object);
+                this.object = null;
+            }
+
+            on(event, callback) {
+                this.object.on(event, callback);
+            }
+        }
+
+        // 폭죽을 생성합니다.
+        var fireworks = [];
+        for (var i = 0; i < 100; i++) {
+            var position = new THREE.Vector3(
+                Math.random() * 1000 - 500,
+                Math.random() * 1000 - 500,
+                Math.random() * 1000 - 500
+            );
+            var velocity = new THREE.Vector3(
+                Math.random() * 100,
+                Math.random() * 100,
+                Math.random() * 100
+            );
+            var color = new THREE.Color(
+                Math.random(),
+                Math.random(),
+                Math.random()
+            );
+            fireworks.push(new Firework(position, velocity, color));
+        }
+
+    // 폭죽을 업데이트합니다.
+    </script>
+</body>
+
+</html>
